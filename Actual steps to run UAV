@@ -1,0 +1,24 @@
+To run UAV:
+
+1. Open kafka folder and run:
+  
+  ./bin/zookeeper-server-start.sh config/zookeeper.properties
+  
+  open other terminal and run
+  
+  ./bin/kafka-server-start.sh config/server.properties
+
+2. Open ffmpeg folder	
+   /home/imsas/Documents/ffmpeg-git-20220910-amd64-static
+   ./ffmpeg -re -stream_loop 5 -i <uav video path>  -map 0 -c:v:1 libx264 -f mpegts -loop 0 udp://localhost:11005
+
+3. Open Uav_ml folder
+   /home/imsas/Documents/new/vishal_UAV2/vishal_UAV2/BEL/Uav_ml
+   ./Uav_ml
+
+4. Open Uav_ml_consumer
+   /home/imsas/Documents/new/vishal_UAV2/vishal_UAV2/BEL/Uav_ml_consumer
+   ./Uav_ml_consumer
+
+	
+
